@@ -27,7 +27,7 @@ module.exports = gql`
     getTodos: [Todo]
     getTodo(id: ID): Todo
     getTodosByUser(userId: ID): [Todo]
-    getTodosByCompletion(completed: Boolean): [Todo]  # New query to get todos by completion status
+    getTodosByCompletion(completed: Boolean): [Todo]  
   }
 
   type AuthPayload {
@@ -41,12 +41,12 @@ module.exports = gql`
     login(email: String, password: String): AuthPayload
 
     # Users
-    addUser(username: String, email: String, password: String): User    # لو حابب تضيف عبر الأدمن
+    addUser(username: String, email: String, password: String): User   
     updateUser(id: ID, username: String, email: String, password: String): User
     deleteUser(id: ID): Boolean
 
     # Todos
-    addTodo(title: String): Todo          # user مأخوذ من الـ context
+    addTodo(title: String): Todo       
     updateTodo(id: ID, title: String, completed: Boolean): Todo
     deleteTodo(id: ID): Boolean
   }

@@ -27,7 +27,7 @@ module.exports = {
       return { token: makeToken(user), user };
     },
 
-    // Users (بسيطة – يمكن تقييدها للمشرف فقط)
+    // for Users 
     addUser: (_, args, { auth }) => {
       if (!auth) throw new Error('Not authorized');
       return User.create(args);
@@ -41,7 +41,6 @@ module.exports = {
       return !!User.findByIdAndDelete(id);
     },
 
-    // Todos
     addTodo: (_, { title }, { auth }) => {
       if (!auth) throw new Error('Login first');
       return Todo.create({ title, user: auth.userId });
@@ -57,7 +56,6 @@ module.exports = {
     }
   },
 
-  // روابط الحقول
   User: {
     todos: parent => Todo.find({ user: parent.id })
   },

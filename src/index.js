@@ -20,6 +20,6 @@ const authMiddleware = require('./middleware/auth');
   server.applyMiddleware({ app, path: '/graphql' });
 
   app.listen(4000, () =>
-    console.log('🚀  GraphQL ready at http://localhost:4000/graphql')
+    console.log(' GraphQL ready at http://localhost:4000/graphql')
   );
 })();
